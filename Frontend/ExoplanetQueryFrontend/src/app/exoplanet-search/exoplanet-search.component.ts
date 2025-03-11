@@ -12,6 +12,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule, MatTableDataSource } from '@angular/material/table';
 import { MatSort, MatSortModule } from '@angular/material/sort';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
+import { MatSelectModule } from '@angular/material/select';
 
 @Component({
   selector: 'app-exoplanet-search',
@@ -26,7 +27,8 @@ import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
     MatSortModule,
     MatIconModule,    
     MatTooltipModule,  
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatSelectModule
   ],
   templateUrl: './exoplanet-search.component.html',
   styleUrls: ['./exoplanet-search.component.css']
@@ -37,6 +39,8 @@ export class ExoplanetSearchComponent implements AfterViewInit {
   discoveryMethodSearch: string = '';
   discoveryFacilitySearch: string = '';
   discoveryYearSearch: number | null = null;
+
+  years: number[] = Array.from({ length: 2026 - 1992 + 1 }, (_, i) => 1992 + i);
 
   dataSource = new MatTableDataSource<any>([]);
   displayedColumns: string[] = [
