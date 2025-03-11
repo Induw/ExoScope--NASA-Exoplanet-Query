@@ -1,0 +1,81 @@
+<div class="container">
+    <button mat-icon-button class="help-button"
+     matTooltip="NASA Exoplanet Explorer is a tool to search NASA's exoplanet database. Enter search criteria in the fields below (e.g., 'Kep' for Planet Name) to filter exoplanets. Sort columns by clicking headers, use pagination to navigate results, and click host names for more info. Clear resets all fields." 
+    matTooltipPosition="right">
+        <mat-icon>help_outline</mat-icon>
+    </button>
+    <h1 class="title"> NASA Exoplanet Explorer</h1>
+    <div class="search-container">
+      <mat-form-field appearance="outline" class="search-field">
+        <mat-label>Planet Name</mat-label>
+        <input matInput [(ngModel)]="planetNameSearch" (ngModelChange)="search()">
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="search-field">
+        <mat-label>Host Name</mat-label>
+        <input matInput [(ngModel)]="hostNameSearch" (ngModelChange)="search()">
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="search-field">
+        <mat-label>Discovery Method</mat-label>
+        <input matInput [(ngModel)]="discoveryMethodSearch" (ngModelChange)="search()">
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="search-field">
+        <mat-label>Discovery Facility</mat-label>
+        <input matInput [(ngModel)]="discoveryFacilitySearch" (ngModelChange)="search()">
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="search-field">
+        <mat-label>Discovery Year</mat-label>
+        <input matInput type="number" [(ngModel)]="discoveryYearSearch" (ngModelChange)="search()">
+      </mat-form-field>
+      <button class="clearbutton" mat-raised-button color="primary" (click)="clear()">Clear Search</button>
+    </div>
+  
+    <div class="table-container">
+      <mat-table [dataSource]="dataSource" matSort class="mat-elevation-z2">
+        <ng-container matColumnDef="planetName">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Planet Name</mat-header-cell>
+          <mat-cell *matCellDef="let exoplanet">{{ exoplanet.planetName }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="hostName">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Host Name</mat-header-cell>
+          <mat-cell *matCellDef="let exoplanet">
+            <a [href]="getHostNameUrl(exoplanet.hostName)" target="_blank">{{ exoplanet.hostName }}</a>
+          </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="discoveryMethod">
+          <mat-header-cell class = "discfac"  *matHeaderCellDef mat-sort-header>Discovery Method</mat-header-cell>
+          <mat-cell class = "discfac" *matCellDef="let exoplanet">{{ exoplanet.discoveryMethod }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="discoveryFacility">
+          <mat-header-cell class = "discfac"  *matHeaderCellDef mat-sort-header>Discovery Facility</mat-header-cell>
+          <mat-cell class = "discfac" *matCellDef="let exoplanet">{{ exoplanet.discoveryFacility }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="discoveryYear">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Discovery Year</mat-header-cell>
+          <mat-cell *matCellDef="let exoplanet">{{ exoplanet.discoveryYear }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="orbitalPeriod">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Orbital Period</mat-header-cell>
+          <mat-cell *matCellDef="let exoplanet">{{ exoplanet.orbitalPeriod }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="planetRadius">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Planet Radius</mat-header-cell>
+          <mat-cell *matCellDef="let exoplanet">{{ exoplanet.planetRadius }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="planetMass">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Planet Mass</mat-header-cell>
+          <mat-cell *matCellDef="let exoplanet">{{ exoplanet.planetMass }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="distance">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Distance</mat-header-cell>
+          <mat-cell *matCellDef="let exoplanet">{{ exoplanet.distance }}</mat-cell>
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+      <mat-paginator [pageSizeOptions]="[5, 10, 20, 50]" class="paginator"></mat-paginator>
+    </div>
+    <div class="footer">
+        Developed by <a href="https://github.com/Induw/NASA-Exoplanet-Query" target="_blank">Induw</a>
+        , All data was obtained from the <a href="https://exoplanetarchive.ipac.caltech.edu/" target="_blank">NASA Exoplanet Archive</a>
+      </div>
+  </div>

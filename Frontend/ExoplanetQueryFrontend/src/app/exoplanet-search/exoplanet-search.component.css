@@ -1,0 +1,124 @@
+.container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative; 
+    min-height: 100vh;
+  }
+  
+  .title {
+    text-align: center;
+    font-size: 2.5rem; 
+    font-weight: 700; 
+    margin-bottom: 30px;
+    color: #e0e0e0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); 
+  }
+  .help-button {
+    position: absolute;
+    margin-top: 30px;
+    top: 10px;
+    right: 10px;
+    color: #e0e0e0;
+  }
+  .clearbutton {
+    height: 56px;
+    width: 100px;
+    border: 1px solid #e4acac; 
+  }
+
+  .discfac {
+    min-width: 200px; 
+  }
+
+  .search-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .search-field {
+    width: 200px;
+  }
+
+
+.paginator{
+    padding-left: 10px !important;
+    background-color: #424242;
+    border-radius: 4px;
+}
+
+  .search-field input {
+    padding-left: 15px !important; 
+  }
+  
+  button {
+    height: 56px; 
+  }
+  
+  .table-container {
+    background-color: #1e1e1e; 
+    border-radius: 8px;
+    padding: 15px;
+    flex-grow: 1
+  }
+  
+  mat-table {
+    width: 100%;
+  }
+  a {
+    color: #5da9ff !important; 
+    text-decoration: none !important;
+  }
+  
+  mat-header-cell {
+    background-color: #2c2c2c; 
+  }
+  
+  .mat-paginator-container {
+    padding-left: 16px !important;
+  }
+
+  mat-header-cell, mat-cell {
+    color: #e0e0e0 !important; 
+  }
+  .mat-paginator-container {
+    padding-left: 10px !important;
+  }
+
+  a:hover {
+    color : #80cfff !important;
+    text-decoration: underline;
+  }
+
+mat-paginator ::ng-deep .mat-mdc-select-trigger {
+    background-color: #424242; 
+    border-radius: 4px;
+    opacity: 1;
+  }
+  
+  mat-paginator ::ng-deep .mat-mdc-select-value-text {
+    padding: 10px !important; 
+  }
+
+  .footer {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #e0e0e0;
+    margin-top: 20px;
+  }
+  
+  .footer a {
+    color: #ffca28; 
+    text-decoration: none;
+  }
+  
+  .footer a:hover {
+    text-decoration: underline;
+  }
+
+  ::ng-deep .mat-mdc-tooltip {
+    font-size: 0.7rem !important; /* Smaller than default (~14px) */
+  }
