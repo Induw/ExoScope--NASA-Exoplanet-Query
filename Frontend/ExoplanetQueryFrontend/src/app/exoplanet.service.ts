@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ExoplanetService {
-  private apiUrl = 'http://localhost:5220/api/exoplanets'; 
+  private apiUrl = 'https://exoplanetexplorer.azurewebsites.net/api/exoplanets'; 
 
   constructor(private http: HttpClient) {}
 
