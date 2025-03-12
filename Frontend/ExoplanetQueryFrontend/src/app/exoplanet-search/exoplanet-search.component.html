@@ -1,12 +1,15 @@
 
 <div class="container">
     <button mat-icon-button class="help-button"
-    matTooltip="NASA Exoplanet Explorer is a tool to search NASA's exoplanet archive. Enter search criteria in the fields below, to filter exoplanets. Sort columns by clicking headers, use pagination to navigate results, and click host names for more info. Clear resets all fields." 
+    matTooltip="ExoScope is a tool to search NASA's exoplanet archive. Enter search criteria in the fields below, to filter exoplanets. Use pagination to navigate results, and click host names for more info. Clear Search resets all fields." 
     matTooltipPosition="left"
     mat>
 <mat-icon>help_outline</mat-icon>
 </button>
-    <h1 class="title"> NASA Exoplanet Explorer</h1>
+<img src="exoplanetappicon.png"/>
+    <h1 class="title">
+        ExoScope <span class="subtitle">- The Exoplanet Explorer</span>
+    </h1>
     <div class="search-container">
       <mat-form-field appearance="outline" class="search-field">
         <mat-label>Planet Name</mat-label>
@@ -79,7 +82,6 @@
       <mat-paginator [pageSizeOptions]="[5, 10, 20, 50]" class="paginator"></mat-paginator>
     </div>
     <div class="footer">
-        Developed by <a href="https://github.com/Induw/NASA-Exoplanet-Query" target="_blank">Induw</a>
-        , All data was obtained from the <a href="https://exoplanetarchive.ipac.caltech.edu/" target="_blank">NASA Exoplanet Archive</a>
+        Developed by <a href='https://github.com/Induw/NASA-Exoplanet-Query' target='_blank'>Induw</a>. Data sourced from the <a href='https://exoplanetarchive.ipac.caltech.edu/' target='_blank'>NASA Exoplanet Archive</a>.
       </div>
   </div>
