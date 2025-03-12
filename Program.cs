@@ -8,7 +8,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowRenderFrontend", builder =>
     {
-        builder.WithOrigins("https://nasa-exoplanet-explorer.onrender.com")
+        builder.AllowAnyOrigin()
                .AllowAnyMethod()
                .AllowAnyHeader();
     });
