@@ -15,7 +15,14 @@ namespace ExoplanetQueryApp.Services
 
         private List<Exoplanet> LoadExoplanetData()
         {
-            using var reader = new StreamReader("Data/ExoplanetData.csv");
+            var basePath = AppDomain.CurrentDomain.BaseDirectory;
+            var csvPath = Path.Combine(basePath, "Data", "ExoplanetData.csv");
+
+            if (!File.Exists(csvPath))
+            {
+                throw new FileNotFoundException($"CSV file not found at: {csvPath}");
+            }
+            using var reader = new StreamReader(csvPath);
             using var csv = new CsvReader(reader, CultureInfo.InvariantCulture);
             while (csv.Read())
             {
