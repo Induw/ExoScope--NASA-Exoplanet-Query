@@ -10,7 +10,7 @@
   .title {
     text-align: center;
     font-size: 2.5rem; 
-    font-weight: 700; 
+    font-weight: 900; 
     margin-top: 10px;
     margin-bottom: 50px;
     color: #e0e0e0;
@@ -18,21 +18,20 @@
   }
   .help-button {
     position: absolute;
-    top: 20px; /* Space from the top edge */
-    right: 20px; /* Space from the right edge */
-    font-size: 24px; /* Larger icon size */
-    padding: 8px; /* Extra padding for a bigger clickable area */
-    color: #ffca28; /* Amber color for visibility */
-    background-color: #2c2c2c; /* Dark background for contrast */
-    border-radius: 50%; /* Circular shape */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-    transition: all 0.3s ease; /* Smooth hover effect */
+    top: 25px; 
+    right: 25px; 
+    font-size: 26px; 
+    padding: 10px;
+    color: #28d0ff; 
+    border-radius: 50%; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease; 
   }
   
   .help-button:hover {
-    color: #ffffff; /* White icon on hover */
-    background-color: #383838; /* Darker background on hover */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+    color: #adf59d;
+    background-color: #383838; 
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); 
   }
   .clearbutton {
     height: 56px;
@@ -87,10 +86,21 @@
     padding: 15px;
     flex-grow: 1
   }
-  
+  .subtitle {
+    font-size: 0.5em; 
+    color: #bcbaba;
+    font-style: oblique; 
+}
   mat-table {
     width: 100%;
   }
+  img {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    left: calc(50% - 310px); 
+    top: 10px; 
+}
   a {
     color: #5da9ff !important; 
     text-decoration: none !important;
